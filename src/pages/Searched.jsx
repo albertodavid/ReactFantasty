@@ -9,7 +9,7 @@ function Searched() {
   let params = useParams();
 
   const getSearched = async(name) => {
-    const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12&query=${name}`)
+    const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=12&query=${name}`)
     const recipes = await data.json();
 
     setSearchedRecipes(recipes.results)
